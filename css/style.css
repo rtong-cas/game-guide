@@ -7,21 +7,33 @@ a:hover { color: #9b7fff; }
 img { max-width: 100%; height: auto; }
 ::selection { background: #7c5cfc40; color: #fff; }
 
+/* ===== 页面加载动画 ===== */
+.page-loading { opacity: 0; animation: fadeIn 0.4s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.skeleton { background: linear-gradient(90deg, #1e1e36 25%, #2a2a4a 50%, #1e1e36 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
 /* ===== 头部导航 ===== */
 .header { background: rgba(26, 26, 46, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #2a2a4a; position: sticky; top: 0; z-index: 100; }
 .header .container { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 60px; }
-.logo { font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, #7c5cfc, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.logo { font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, #7c5cfc, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
 .nav { display: flex; gap: 4px; }
 .nav a { color: #a0a0b0; font-size: 0.9rem; padding: 8px 16px; border-radius: 8px; transition: 0.2s; }
 .nav a:hover, .nav a.active { background: #2a2a4a; color: #fff; }
 .search-box { display: flex; gap: 0; }
-.search-box input { background: #2a2a4a; border: 1px solid #3a3a5a; border-radius: 8px 0 0 8px; padding: 8px 14px; color: #fff; width: 220px; outline: none; font-size: 0.85rem; }
-.search-box input:focus { border-color: #7c5cfc; }
+.search-box input { background: #2a2a4a; border: 1px solid #3a3a5a; border-radius: 8px 0 0 8px; padding: 8px 14px; color: #fff; width: 220px; outline: none; font-size: 0.85rem; transition: 0.2s; }
+.search-box input:focus { border-color: #7c5cfc; width: 260px; }
 .search-box button { background: #7c5cfc; border: none; border-radius: 0 8px 8px 0; padding: 8px 14px; color: #fff; cursor: pointer; font-size: 0.9rem; }
 .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; }
 
+/* ===== 面包屑导航 ===== */
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #5a5a7a; margin-bottom: 16px; flex-wrap: wrap; }
+.breadcrumb a { color: #7c5cfc; }
+.breadcrumb a:hover { color: #9b7fff; }
+.breadcrumb .sep { color: #3a3a5a; }
+
 /* ===== HERO 大图 ===== */
-.hero-banner { position: relative; min-height: 400px; display: flex; align-items: center; background-size: cover; background-position: center; }
+.hero-banner { position: relative; min-height: 400px; display: flex; align-items: center; background-size: cover; background-position: center; transition: background-image 0.8s ease; }
 .hero-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,15,26,0.95) 0%, rgba(15,15,26,0.6) 50%, rgba(15,15,26,0.3) 100%); }
 .hero-content { position: relative; z-index: 1; max-width: 600px; padding: 60px 0; }
 .hero-tag { display: inline-block; background: #7c5cfc; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 16px; }
@@ -29,6 +41,9 @@ img { max-width: 100%; height: auto; }
 .hero-content p { font-size: 1.1rem; color: #b0b0c0; margin-bottom: 24px; }
 .hero-btn { display: inline-block; background: #7c5cfc; color: #fff !important; padding: 12px 28px; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: 0.2s; }
 .hero-btn:hover { background: #6a4ae0; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,92,252,0.3); }
+.hero-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
+.hero-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.2s; }
+.hero-dot.active { background: #7c5cfc; width: 28px; border-radius: 5px; }
 
 /* ===== 快捷入口 ===== */
 .quick-links { margin-top: -30px; position: relative; z-index: 2; }
@@ -37,14 +52,15 @@ img { max-width: 100%; height: auto; }
 .quick-item:hover { border-color: #7c5cfc; transform: translateY(-2px); background: #22224a; }
 .qi-icon { display: block; font-size: 1.6rem; margin-bottom: 6px; }
 .qi-label { display: block; font-size: 0.85rem; font-weight: 500; }
-.qi-count { display: inline-block; margin-top: 6px; background: #2a2a4a; padding: 2px 10px; border-radius: 10px; font-size: 0.75rem; color: #7c5cfc; }
+.qi-count { display: inline-block; margin-top: 6px; background: #2a2a4a; padding: 2px 10px; border-radius: 10px; font-size: 0.75rem; color: #7c5cfc; font-weight: 600; }
 
 /* ===== Section ===== */
 .section { padding: 40px 0; }
 .bg-alt { background: #14142a; }
 .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
 .section-header h2 { font-size: 1.3rem; font-weight: 700; color: #fff; }
-.more { color: #7c5cfc; font-size: 0.85rem; font-weight: 500; }
+.more { color: #7c5cfc; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
+.more:hover { color: #9b7fff; }
 
 /* ===== 平台Tab ===== */
 .tab-bar { display: flex; gap: 4px; background: #1a1a2e; border-radius: 8px; padding: 3px; }
@@ -53,9 +69,14 @@ img { max-width: 100%; height: auto; }
 
 /* ===== 游戏卡片 ===== */
 .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.game-card { background: #1e1e36; border-radius: 14px; overflow: hidden; transition: 0.25s; cursor: pointer; border: 1px solid #2a2a4a; }
+.game-card { background: #1e1e36; border-radius: 14px; overflow: hidden; transition: 0.25s; cursor: pointer; border: 1px solid #2a2a4a; animation: fadeIn 0.4s ease forwards; }
+.game-card:nth-child(2) { animation-delay: 0.05s; }
+.game-card:nth-child(3) { animation-delay: 0.1s; }
+.game-card:nth-child(4) { animation-delay: 0.15s; }
+.game-card:nth-child(5) { animation-delay: 0.2s; }
+.game-card:nth-child(6) { animation-delay: 0.25s; }
 .game-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(124,92,252,0.12); border-color: #7c5cfc40; }
-.game-card .card-img { height: 160px; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 12px; }
+.game-card .card-img { height: 160px; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 14px; }
 .game-card .card-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 60%); }
 .game-card .card-badge { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; color: #00d4ff; z-index: 1; font-weight: 600; }
 .game-card .card-title { position: relative; z-index: 1; font-size: 1rem; font-weight: 700; color: #fff; }
@@ -66,17 +87,24 @@ img { max-width: 100%; height: auto; }
 
 /* ===== 攻略列表 ===== */
 .guide-list { display: flex; flex-direction: column; gap: 10px; }
-.guide-item { display: flex; gap: 16px; background: #1e1e36; border-radius: 12px; padding: 16px; border: 1px solid #2a2a4a; transition: 0.2s; cursor: pointer; }
+.guide-item { display: flex; gap: 16px; background: #1e1e36; border-radius: 12px; padding: 16px; border: 1px solid #2a2a4a; transition: 0.2s; cursor: pointer; animation: fadeIn 0.4s ease forwards; }
+.guide-item:nth-child(2) { animation-delay: 0.05s; }
+.guide-item:nth-child(3) { animation-delay: 0.1s; }
+.guide-item:nth-child(4) { animation-delay: 0.15s; }
+.guide-item:nth-child(5) { animation-delay: 0.2s; }
+.guide-item:nth-child(6) { animation-delay: 0.25s; }
+.guide-item:nth-child(7) { animation-delay: 0.3s; }
+.guide-item:nth-child(8) { animation-delay: 0.35s; }
 .guide-item:hover { border-color: #7c5cfc; background: #22224a; }
-.guide-item .guide-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; background: #2a2a4a; }
+.guide-item .guide-icon { width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: #2a2a4a; }
 .guide-item .guide-info { flex: 1; min-width: 0; }
 .guide-item .guide-info h3 { font-size: 0.95rem; color: #fff; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .guide-item .guide-info p { font-size: 0.82rem; color: #7a7a9a; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .guide-item .guide-info .guide-meta { display: flex; gap: 12px; margin-top: 6px; font-size: 0.75rem; color: #5a5a7a; flex-wrap: wrap; }
 
-/* ===== 资讯轮播 ===== */
+/* ===== 资讯卡片 ===== */
 .news-carousel { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
-.news-card { background: #1e1e36; border: 1px solid #2a2a4a; border-radius: 12px; padding: 18px; transition: 0.2s; cursor: pointer; }
+.news-card { background: #1e1e36; border: 1px solid #2a2a4a; border-radius: 12px; padding: 18px; transition: 0.2s; cursor: pointer; animation: fadeIn 0.4s ease forwards; }
 .news-card:hover { border-color: #7c5cfc40; }
 .news-card .news-tag { display: inline-block; background: #2a2a4a; padding: 2px 10px; border-radius: 4px; font-size: 0.72rem; color: #7c5cfc; margin-bottom: 8px; }
 .news-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 6px; line-height: 1.4; }
@@ -90,13 +118,16 @@ img { max-width: 100%; height: auto; }
 .upcoming-card .date { display: inline-block; background: #7c5cfc15; color: #7c5cfc; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 12px; }
 .upcoming-card h3 { font-size: 1rem; color: #fff; margin-bottom: 4px; }
 .upcoming-card p { font-size: 0.82rem; color: #7a7a9a; }
-.upcoming-card .plat { display: flex; gap: 6px; justify-content: center; margin-top: 10px; }
+.upcoming-card .plat { display: flex; gap: 6px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
 .upcoming-card .plat span { background: #2a2a4a; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; color: #7a7a9a; }
+
+/* ===== 分页按钮 ===== */
+.load-more-wrap { text-align: center; margin-top: 24px; }
+.load-more-btn { background: #2a2a4a; border: 1px solid #3a3a5a; color: #a0a0b0; padding: 10px 32px; border-radius: 8px; font-size: 0.9rem; cursor: pointer; transition: 0.2s; }
+.load-more-btn:hover { background: #3a3a5a; border-color: #7c5cfc; color: #fff; }
 
 /* ===== 详情页 ===== */
 .guide-detail { padding: 40px 0; }
-.guide-detail .back { display: inline-flex; align-items: center; gap: 4px; margin-bottom: 20px; color: #7a7a9a; font-size: 0.9rem; }
-.guide-detail .back:hover { color: #7c5cfc; }
 .guide-detail h1 { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.3; }
 .guide-detail .detail-meta { display: flex; gap: 16px; margin-bottom: 24px; color: #7a7a9a; font-size: 0.85rem; flex-wrap: wrap; }
 .guide-detail .detail-meta span { display: flex; align-items: center; gap: 4px; }
@@ -112,7 +143,7 @@ img { max-width: 100%; height: auto; }
 .guide-detail .content .warn-block { background: #2e1a1a; border-left: 3px solid #ff5555; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 18px 0; }
 .guide-detail .content .warn-block strong { color: #ff5555; }
 .guide-detail .content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
-.guide-detail .content th { background: #2a2a4a; padding: 10px 14px; text-align: left; color: #a0a0c0; border: 1px solid #3a3a5a; }
+.guide-detail .content th { background: #2a2a4a; padding: 10px 14px; text-align: left; color: #a0a0c0; border: 1px solid #3a3a5a; font-weight: 600; }
 .guide-detail .content td { padding: 10px 14px; border: 1px solid #2a2a4a; }
 .guide-detail .content tr:nth-child(even) td { background: #1a1a30; }
 .guide-detail .toc { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 10px; padding: 20px; margin-bottom: 24px; }
@@ -120,10 +151,14 @@ img { max-width: 100%; height: auto; }
 .guide-detail .toc a { display: block; padding: 6px 0; color: #7a7a9a; font-size: 0.9rem; }
 .guide-detail .toc a:hover { color: #7c5cfc; }
 .guide-detail .toc a::before { content: '▸ '; color: #7c5cfc; }
+.guide-detail .content .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+.guide-detail .content .stat-box { background: #1e1e36; border: 1px solid #2a2a4a; border-radius: 10px; padding: 14px; text-align: center; }
+.guide-detail .content .stat-box .num { font-size: 1.3rem; font-weight: 700; color: #7c5cfc; }
+.guide-detail .content .stat-box .label { font-size: 0.78rem; color: #7a7a9a; margin-top: 2px; }
 
 /* ===== 游戏详情 ===== */
 .game-detail { padding: 40px 0; }
-.game-detail .game-header { display: flex; gap: 30px; margin-bottom: 30px; }
+.game-detail .game-header { display: flex; gap: 30px; margin-bottom: 24px; }
 .game-detail .game-header .info { flex: 1; }
 .game-detail .game-header .info h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
 .game-detail .game-header .info .game-meta { color: #7a7a9a; font-size: 0.85rem; margin-bottom: 12px; }
@@ -131,21 +166,26 @@ img { max-width: 100%; height: auto; }
 .game-detail .game-header .info .game-tags span { background: #2a2a4a; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #a0a0c0; }
 .game-detail .game-header .cover { width: 300px; height: 170px; border-radius: 14px; background-size: cover; background-position: center; flex-shrink: 0; position: relative; overflow: hidden; }
 .game-detail .game-header .cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, transparent 60%); }
+.guide-count-badge { display: inline-flex; align-items: center; gap: 4px; background: #7c5cfc15; border: 1px solid #7c5cfc30; padding: 6px 14px; border-radius: 8px; color: #7c5cfc; font-size: 0.85rem; }
 
 /* ===== 游戏库页 ===== */
 .games-page { padding: 40px 0; }
-.games-page .page-header { margin-bottom: 30px; }
+.games-page .page-header { margin-bottom: 24px; }
 .games-page .page-header h1 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
 .games-page .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
 .games-page .filter-bar .filter-btn { background: #1e1e36; border: 1px solid #2a2a4a; padding: 8px 18px; border-radius: 8px; color: #a0a0b0; font-size: 0.85rem; cursor: pointer; transition: 0.2s; }
 .games-page .filter-bar .filter-btn:hover, .games-page .filter-bar .filter-btn.active { background: #2a2a4a; border-color: #7c5cfc; color: #fff; }
 
-/* ===== 资讯页 ===== */
-.news-page { padding: 40px 0; }
+/* ===== 搜索空结果 ===== */
+.empty-state { text-align: center; padding: 80px 20px; }
+.empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
+.empty-state h3 { color: #fff; font-size: 1.2rem; margin-bottom: 8px; }
+.empty-state p { color: #7a7a9a; font-size: 0.9rem; }
 
-/* ===== 关于页 ===== */
-.about-page { padding: 60px 0; }
-.about-page h1 { font-size: 1.8rem; color: #fff; margin-bottom: 20px; }
+/* ===== 回到顶部 ===== */
+.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; border-radius: 50%; background: #7c5cfc; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 16px rgba(124,92,252,0.3); opacity: 0; transform: translateY(20px); transition: 0.3s; z-index: 99; }
+.back-to-top.show { opacity: 1; transform: translateY(0); }
+.back-to-top:hover { background: #6a4ae0; transform: translateY(-2px); }
 
 /* ===== Footer ===== */
 .footer { background: #1a1a2e; border-top: 1px solid #2a2a4a; padding: 40px 0 0; }
@@ -164,9 +204,10 @@ img { max-width: 100%; height: auto; }
   .nav a { padding: 10px 0; }
   .menu-toggle { display: block; }
   .search-box { margin-left: auto; }
-  .search-box input { width: 140px; }
+  .search-box input { width: 120px; }
+  .search-box input:focus { width: 160px; }
   
-  .hero-banner { min-height: 300px; }
+  .hero-banner { min-height: 280px; }
   .hero-content h1 { font-size: 1.6rem; }
   .hero-content p { font-size: 0.95rem; }
   
@@ -180,10 +221,14 @@ img { max-width: 100%; height: auto; }
   .game-detail .game-header { flex-direction: column; }
   .game-detail .game-header .cover { width: 100%; height: 200px; }
   .guide-detail h1 { font-size: 1.4rem; }
+  .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
   .quick-grid { grid-template-columns: repeat(2, 1fr); }
   .upcoming-grid { grid-template-columns: 1fr; }
   .search-box input { width: 100px; }
+  .search-box input:focus { width: 130px; }
+  .hero-banner { min-height: 240px; }
+  .hero-content h1 { font-size: 1.3rem; }
 }
