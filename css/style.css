@@ -1,0 +1,107 @@
+/* ===== 基础重置 ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f1a; color: #e0e0e0; line-height: 1.6; }
+a { color: #7c5cfc; text-decoration: none; }
+a:hover { color: #9b7fff; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+img { max-width: 100%; height: auto; }
+
+/* ===== 头部导航 ===== */
+.header { background: #1a1a2e; border-bottom: 1px solid #2a2a4a; position: sticky; top: 0; z-index: 100; }
+.header .container { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; }
+.logo { font-size: 1.5rem; font-weight: 700; color: #7c5cfc !important; }
+.nav { display: flex; gap: 24px; }
+.nav a { color: #a0a0b0; font-size: 0.95rem; padding: 4px 0; border-bottom: 2px solid transparent; transition: 0.2s; }
+.nav a:hover, .nav a.active { color: #fff; border-bottom-color: #7c5cfc; }
+.search-box { display: flex; gap: 4px; }
+.search-box input { background: #2a2a4a; border: 1px solid #3a3a5a; border-radius: 6px; padding: 8px 12px; color: #fff; width: 200px; outline: none; }
+.search-box input:focus { border-color: #7c5cfc; }
+.search-box button { background: #7c5cfc; border: none; border-radius: 6px; padding: 8px 14px; color: #fff; cursor: pointer; }
+
+/* ===== Hero ===== */
+.hero { background: linear-gradient(135deg, #1a1a2e 0%, #2a1a4e 50%, #1a2a3e 100%); padding: 60px 0; text-align: center; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 12px; background: linear-gradient(135deg, #7c5cfc, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: #8a8aaa; font-size: 1.1rem; }
+
+/* ===== Section ===== */
+.section { padding: 40px 0; }
+.bg-alt { background: #14142a; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.section-header h2 { font-size: 1.4rem; color: #fff; }
+.more { color: #7c5cfc; font-size: 0.9rem; }
+
+/* ===== 游戏卡片网格 ===== */
+.game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.game-card { background: #1e1e36; border-radius: 12px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: 1px solid #2a2a4a; }
+.game-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(124, 92, 252, 0.15); }
+.game-card .card-img { height: 140px; background-size: cover; background-position: center; position: relative; }
+.game-card .card-badge { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; color: #00d4ff; }
+.game-card .card-body { padding: 16px; }
+.game-card .card-body h3 { font-size: 1.05rem; margin-bottom: 6px; color: #fff; }
+.game-card .card-body .meta { font-size: 0.82rem; color: #7a7a9a; margin-bottom: 8px; }
+.game-card .card-body .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.game-card .card-body .tags span { background: #2a2a4a; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; color: #a0a0c0; }
+
+/* ===== 攻略列表 ===== */
+.guide-list { display: flex; flex-direction: column; gap: 12px; }
+.guide-item { display: flex; gap: 16px; background: #1e1e36; border-radius: 10px; padding: 16px; border: 1px solid #2a2a4a; transition: 0.2s; cursor: pointer; }
+.guide-item:hover { border-color: #7c5cfc; }
+.guide-item .guide-icon { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.guide-item .guide-info { flex: 1; }
+.guide-item .guide-info h3 { font-size: 1rem; color: #fff; margin-bottom: 4px; }
+.guide-item .guide-info p { font-size: 0.85rem; color: #7a7a9a; }
+.guide-item .guide-info .guide-meta { display: flex; gap: 12px; margin-top: 6px; font-size: 0.78rem; color: #5a5a7a; }
+
+/* ===== 即将发售 ===== */
+.upcoming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.upcoming-card { background: #1e1e36; border-radius: 10px; padding: 20px; text-align: center; border: 1px solid #2a2a4a; }
+.upcoming-card .date { display: inline-block; background: #7c5cfc20; color: #7c5cfc; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem; margin-bottom: 10px; }
+.upcoming-card h3 { font-size: 1rem; color: #fff; margin-bottom: 4px; }
+.upcoming-card p { font-size: 0.85rem; color: #7a7a9a; }
+
+/* ===== 详情页 ===== */
+.guide-detail { padding: 40px 0; }
+.guide-detail .back { display: inline-block; margin-bottom: 20px; color: #7a7a9a; }
+.guide-detail .back:hover { color: #7c5cfc; }
+.guide-detail h1 { font-size: 2rem; color: #fff; margin-bottom: 16px; }
+.guide-detail .detail-meta { display: flex; gap: 16px; margin-bottom: 24px; color: #7a7a9a; font-size: 0.9rem; }
+.guide-detail .content { font-size: 1rem; line-height: 1.8; }
+.guide-detail .content h2 { font-size: 1.3rem; color: #fff; margin: 28px 0 12px; padding-bottom: 8px; border-bottom: 1px solid #2a2a4a; }
+.guide-detail .content h3 { font-size: 1.1rem; color: #d0d0f0; margin: 20px 0 10px; }
+.guide-detail .content p { margin-bottom: 12px; }
+.guide-detail .content ul, .guide-detail .content ol { margin: 8px 0 16px 20px; }
+.guide-detail .content li { margin-bottom: 6px; }
+.guide-detail .content .tip { background: #1e2a3e; border-left: 3px solid #00d4ff; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+.guide-detail .content .tip strong { color: #00d4ff; }
+.guide-detail .content .warning { background: #2e1a1a; border-left: 3px solid #ff4444; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+.guide-detail .content .warning strong { color: #ff4444; }
+
+/* ===== 游戏详情页 ===== */
+.game-detail { padding: 40px 0; }
+.game-detail .game-header { display: flex; gap: 30px; margin-bottom: 30px; }
+.game-detail .game-header .info { flex: 1; }
+.game-detail .game-header .info h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+.game-detail .game-header .info .game-meta { color: #7a7a9a; font-size: 0.9rem; margin-bottom: 12px; }
+.game-detail .game-header .info .game-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.game-detail .game-header .info .game-tags span { background: #2a2a4a; padding: 4px 12px; border-radius: 6px; font-size: 0.82rem; color: #a0a0c0; }
+.game-detail .game-header .cover { width: 280px; height: 160px; border-radius: 12px; background-size: cover; background-position: center; flex-shrink: 0; }
+.game-detail .guide-list { margin-top: 20px; }
+
+/* ===== 游戏库页 ===== */
+.games-page { padding: 40px 0; }
+.games-page .page-header { margin-bottom: 30px; }
+.games-page .page-header h1 { font-size: 1.8rem; color: #fff; margin-bottom: 8px; }
+
+/* ===== Footer ===== */
+.footer { background: #1a1a2e; border-top: 1px solid #2a2a4a; padding: 30px 0; text-align: center; color: #5a5a7a; font-size: 0.85rem; }
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .header .container { flex-wrap: wrap; gap: 12px; }
+  .search-box input { width: 140px; }
+  .nav { order: 3; width: 100%; justify-content: center; }
+  .hero h1 { font-size: 1.5rem; }
+  .game-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .game-detail .game-header { flex-direction: column; }
+  .game-detail .game-header .cover { width: 100%; height: 200px; }
+}

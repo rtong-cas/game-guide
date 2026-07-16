@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameGuide - 全自动游戏攻略站</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 导航 -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">🎮 GameGuide</a>
+      <nav class="nav">
+        <a href="/" class="active">首页</a>
+        <a href="games.html">游戏库</a>
+        <a href="about.html">关于</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索游戏或攻略..." onkeydown="if(event.key==='Enter') searchGame()">
+        <button onclick="searchGame()">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>最新热门游戏攻略</h1>
+      <p>AI 自动采集 + 深度整理，覆盖主流平台热门大作</p>
+    </div>
+  </section>
+
+  <!-- 热门游戏 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🔥 热门游戏</h2>
+        <a href="games.html" class="more">查看全部 →</a>
+      </div>
+      <div class="game-grid" id="hotGames">
+        <!-- JS动态加载 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新攻略 -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>📝 最新攻略</h2>
+        <a href="games.html" class="more">查看全部 →</a>
+      </div>
+      <div class="guide-list" id="latestGuides">
+        <!-- JS动态加载 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 近期发售 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>📅 即将发售</h2>
+        <a href="games.html" class="more">查看全部 →</a>
+      </div>
+      <div class="upcoming-grid" id="upcomingGames">
+        <!-- JS动态加载 -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 GameGuide - 全自动游戏攻略站 | 内容由 AI 自动整理，仅供参考</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
