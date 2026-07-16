@@ -7,72 +7,134 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- 导航 -->
+  <!-- 顶部导航 -->
   <header class="header">
     <div class="container">
       <a href="/" class="logo">🎮 GameGuide</a>
       <nav class="nav">
-        <a href="/" class="active">首页</a>
+        <a href="index.html" class="active">首页</a>
         <a href="games.html">游戏库</a>
+        <a href="news.html">游戏资讯</a>
         <a href="about.html">关于</a>
       </nav>
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="搜索游戏或攻略..." onkeydown="if(event.key==='Enter') searchGame()">
+        <input type="text" id="searchInput" placeholder="搜索游戏、攻略、资讯..." onkeydown="if(event.key==='Enter') searchGame()">
         <button onclick="searchGame()">🔍</button>
       </div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- HERO BANNER - 首屏大图 -->
+  <section class="hero-banner" id="heroBanner">
     <div class="container">
-      <h1>最新热门游戏攻略</h1>
-      <p>AI 自动采集 + 深度整理，覆盖主流平台热门大作</p>
+      <div class="hero-content">
+        <div class="hero-tag">🔥 热门推荐</div>
+        <h1 id="heroTitle">黑神话：悟空 全攻略</h1>
+        <p id="heroDesc">从入门到全成就，最完整的西游冒险指南</p>
+        <a class="hero-btn" id="heroLink" href="game.html?id=wukong">查看攻略 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 快捷入口 -->
+  <section class="quick-links">
+    <div class="container">
+      <div class="quick-grid" id="quickLinks">
+        <a href="games.html" class="quick-item"><span class="qi-icon">🎮</span><span class="qi-label">全部游戏</span><span class="qi-count" id="totalGames">0</span></a>
+        <a href="javascript:void(0)" class="quick-item" onclick="filterGuides('新手攻略')"><span class="qi-icon">📖</span><span class="qi-label">新手入门</span><span class="qi-count" id="totalNewbie">0</span></a>
+        <a href="javascript:void(0)" class="quick-item" onclick="filterGuides('BOSS攻略')"><span class="qi-icon">👹</span><span class="qi-label">BOSS攻略</span><span class="qi-count" id="totalBoss">0</span></a>
+        <a href="javascript:void(0)" class="quick-item" onclick="filterGuides('隐藏要素')"><span class="qi-icon">🔍</span><span class="qi-label">隐藏要素</span><span class="qi-count" id="totalHidden">0</span></a>
+        <a href="javascript:void(0)" class="quick-item" onclick="filterGuides('配装攻略')"><span class="qi-icon">⚔️</span><span class="qi-label">配装Build</span><span class="qi-count" id="totalBuild">0</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新资讯 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>📰 最新游戏资讯</h2>
+        <a href="news.html" class="more">更多 →</a>
+      </div>
+      <div class="news-carousel" id="newsList">
+        <!-- JS动态 -->
+      </div>
     </div>
   </section>
 
   <!-- 热门游戏 -->
-  <section class="section">
+  <section class="section bg-alt">
     <div class="container">
       <div class="section-header">
-        <h2>🔥 热门游戏</h2>
-        <a href="games.html" class="more">查看全部 →</a>
+        <h2>🔥 热门游戏攻略</h2>
+        <div class="tab-bar" id="platformTabs">
+          <span class="tab active" onclick="switchTab(this,'all')">全部</span>
+          <span class="tab" onclick="switchTab(this,'pc')">PC</span>
+          <span class="tab" onclick="switchTab(this,'ps')">PlayStation</span>
+          <span class="tab" onclick="switchTab(this,'xbox')">Xbox</span>
+        </div>
       </div>
       <div class="game-grid" id="hotGames">
-        <!-- JS动态加载 -->
+        <!-- JS动态 -->
       </div>
     </div>
   </section>
 
   <!-- 最新攻略 -->
-  <section class="section bg-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>📝 最新攻略</h2>
-        <a href="games.html" class="more">查看全部 →</a>
-      </div>
-      <div class="guide-list" id="latestGuides">
-        <!-- JS动态加载 -->
-      </div>
-    </div>
-  </section>
-
-  <!-- 近期发售 -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>📅 即将发售</h2>
-        <a href="games.html" class="more">查看全部 →</a>
+        <h2>📝 最新更新攻略</h2>
+        <a href="games.html" class="more">全部攻略 →</a>
       </div>
-      <div class="upcoming-grid" id="upcomingGames">
-        <!-- JS动态加载 -->
+      <div class="guide-list" id="latestGuides">
+        <!-- JS动态 -->
       </div>
     </div>
   </section>
 
+  <!-- 即将发售 -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>📅 即将发售</h2>
+        <span class="more" style="color:#7a7a9a;">你最期待哪一款？</span>
+      </div>
+      <div class="upcoming-grid" id="upcomingGames">
+        <!-- JS动态 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部信息 -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 GameGuide - 全自动游戏攻略站 | 内容由 AI 自动整理，仅供参考</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>🎮 GameGuide</h4>
+          <p>全自动游戏攻略站<br>AI 采集整理，持续更新</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速链接</h4>
+          <a href="games.html">游戏库</a>
+          <a href="news.html">游戏资讯</a>
+          <a href="about.html">关于本站</a>
+        </div>
+        <div class="footer-col">
+          <h4>热门游戏</h4>
+          <a href="game.html?id=wukong">黑神话：悟空</a>
+          <a href="game.html?id=elden-ring">艾尔登法环</a>
+          <a href="game.html?id=doom-tda">DOOM 黑暗时代</a>
+        </div>
+        <div class="footer-col">
+          <h4>免责声明</h4>
+          <p style="font-size:0.8rem;color:#5a5a7a;">本站内容由AI自动整理，仅供参考。</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 GameGuide - 全自动游戏攻略站 | Powered by AI 🤖</p>
+      </div>
     </div>
   </footer>
 

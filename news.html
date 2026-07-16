@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>游戏库 - GameGuide</title>
+  <title>游戏资讯 - GameGuide</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
       <a href="/" class="logo">🎮 GameGuide</a>
       <nav class="nav">
         <a href="index.html">首页</a>
-        <a href="games.html" class="active">游戏库</a>
-        <a href="news.html">游戏资讯</a>
+        <a href="games.html">游戏库</a>
+        <a href="news.html" class="active">游戏资讯</a>
         <a href="about.html">关于</a>
       </nav>
       <div class="search-box">
@@ -24,21 +24,13 @@
     </div>
   </header>
 
-  <div class="games-page">
+  <div class="news-page">
     <div class="container">
       <div class="page-header">
-        <h1>🎮 全部游戏</h1>
-        <p style="color:#7a7a9a;">收录热门游戏攻略，持续更新中</p>
+        <h1>📰 游戏资讯</h1>
+        <p style="color:#7a7a9a;">最新游戏行业动态、新作情报、优惠信息</p>
       </div>
-      <div class="filter-bar" id="filterBar">
-        <span class="filter-btn active" onclick="location.href='games.html'">全部</span>
-        <span class="filter-btn" onclick="location.href='games.html?type=BOSS攻略'">BOSS攻略</span>
-        <span class="filter-btn" onclick="location.href='games.html?type=新手攻略'">新手入门</span>
-        <span class="filter-btn" onclick="location.href='games.html?type=配装攻略'">配装Build</span>
-        <span class="filter-btn" onclick="location.href='games.html?type=隐藏要素'">隐藏要素</span>
-        <span class="filter-btn" onclick="location.href='games.html?type=主线攻略'">主线攻略</span>
-      </div>
-      <div class="game-grid" id="allGames"></div>
+      <div class="news-carousel" id="allNews"></div>
     </div>
   </div>
 
@@ -56,5 +48,20 @@
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const el = document.getElementById('allNews');
+      if (el && gamesData.news) {
+        el.innerHTML = gamesData.news.map(n => `
+          <div class="news-card">
+            <span class="news-tag">${n.tag}</span>
+            <h3>${n.title}</h3>
+            <p>${n.desc}</p>
+            <div class="news-meta">📅 ${n.date}</div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
 </body>
 </html>

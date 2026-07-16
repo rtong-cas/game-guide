@@ -13,47 +13,70 @@
       <nav class="nav">
         <a href="index.html">首页</a>
         <a href="games.html">游戏库</a>
+        <a href="news.html">游戏资讯</a>
         <a href="about.html" class="active">关于</a>
       </nav>
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="搜索游戏或攻略..." onkeydown="if(event.key==='Enter') searchGame()">
+        <input type="text" id="searchInput" placeholder="搜索游戏、攻略、资讯..." onkeydown="if(event.key==='Enter') searchGame()">
         <button onclick="searchGame()">🔍</button>
       </div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
   </header>
 
-  <div class="guide-detail">
+  <div class="about-page">
     <div class="container">
-      <h1 style="color:#fff;font-size:1.8rem;margin-bottom:20px;">关于 GameGuide</h1>
+      <h1>🎮 关于 GameGuide</h1>
       <div class="content">
-        <p><strong>GameGuide</strong> 是一个全自动游戏攻略站。</p>
-        <p>我们通过 AI 自动采集和分析主流热门游戏的公开攻略信息，整理成结构化的图文攻略，让你查找攻略更方便。</p>
+        <p style="font-size:1.1rem;line-height:1.8;margin-bottom:30px;">
+          <strong>GameGuide</strong> 是一个使用 AI 技术全自动运行的游戏攻略站。
+          无需人工编辑，系统自动采集热门游戏信息、整理攻略内容、保持更新。
+        </p>
         
-        <h2>功能特点</h2>
-        <ul>
-          <li>🎮 收录热门游戏攻略，覆盖多平台</li>
-          <li>📝 攻略分类清晰：主线/BOSS/配装/隐藏要素</li>
-          <li>🤖 AI 自动采集整理，保持更新</li>
-          <li>📱 响应式设计，手机电脑都能看</li>
-          <li>🔍 快速搜索，一键找到你需要的攻略</li>
-        </ul>
-
-        <h2>免责声明</h2>
-        <p>本站内容由 AI 自动整理生成，仅供参考。游戏内实际内容可能因版本更新而有所变化，请以游戏内实际内容为准。</p>
+        <h2 style="color:#fff;margin:24px 0 12px;font-size:1.3rem;">✨ 功能特点</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-bottom:30px;">
+          <div style="background:#1e1e36;border-radius:10px;padding:20px;border:1px solid #2a2a4a;">
+            <div style="font-size:2rem;margin-bottom:8px;">🤖</div>
+            <h3 style="color:#fff;font-size:1rem;margin-bottom:4px;">全自动运行</h3>
+            <p style="color:#7a7a9a;font-size:0.85rem;">AI自动采集热门游戏信息、整理攻略、保持内容更新</p>
+          </div>
+          <div style="background:#1e1e36;border-radius:10px;padding:20px;border:1px solid #2a2a4a;">
+            <div style="font-size:2rem;margin-bottom:8px;">🎮</div>
+            <h3 style="color:#fff;font-size:1rem;margin-bottom:4px;">多平台覆盖</h3>
+            <p style="color:#7a7a9a;font-size:0.85rem;">PC / PlayStation / Xbox 热门游戏攻略一网打尽</p>
+          </div>
+          <div style="background:#1e1e36;border-radius:10px;padding:20px;border:1px solid #2a2a4a;">
+            <div style="font-size:2rem;margin-bottom:8px;">📝</div>
+            <h3 style="color:#fff;font-size:1rem;margin-bottom:4px;">分类清晰</h3>
+            <p style="color:#7a7a9a;font-size:0.85rem;">主线/BOSS/配装/隐藏要素/新手入门，快速找到你需要的内容</p>
+          </div>
+          <div style="background:#1e1e36;border-radius:10px;padding:20px;border:1px solid #2a2a4a;">
+            <div style="font-size:2rem;margin-bottom:8px;">🔍</div>
+            <h3 style="color:#fff;font-size:1rem;margin-bottom:4px;">智能搜索</h3>
+            <p style="color:#7a7a9a;font-size:0.85rem;">支持游戏名、攻略标题、标签多维度搜索</p>
+          </div>
+        </div>
         
-        <h2>联系方式</h2>
-        <p>如有问题或建议，欢迎通过以下方式联系：</p>
-        <ul>
-          <li>GitHub Issues 提交反馈</li>
-          <li>邮件联系站长</li>
-        </ul>
+        <h2 style="color:#fff;margin:24px 0 12px;font-size:1.3rem;">⚠️ 免责声明</h2>
+        <div style="background:#1e1e36;border-left:3px solid #7c5cfc;padding:16px 20px;border-radius:0 10px 10px 0;margin-bottom:30px;">
+          <p style="color:#a0a0b0;">本站所有内容均由 AI 自动采集和生成，仅供参考。游戏内实际内容可能因版本更新而有所变化，请以游戏内实际内容为准。</p>
+        </div>
+        
+        <h2 style="color:#fff;margin:24px 0 12px;font-size:1.3rem;">📬 联系我们</h2>
+        <p style="color:#7a7a9a;">欢迎通过 GitHub Issues 提交反馈或建议。</p>
       </div>
     </div>
   </div>
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 GameGuide - 全自动游戏攻略站 | 内容由 AI 自动整理，仅供参考</p>
+      <div class="footer-grid">
+        <div class="footer-col"><h4>🎮 GameGuide</h4><p>全自动游戏攻略站<br>AI 采集整理，持续更新</p></div>
+        <div class="footer-col"><h4>快速链接</h4><a href="games.html">游戏库</a><a href="news.html">游戏资讯</a><a href="about.html">关于本站</a></div>
+        <div class="footer-col"><h4>热门游戏</h4><a href="game.html?id=wukong">黑神话：悟空</a><a href="game.html?id=elden-ring">艾尔登法环</a><a href="game.html?id=doom-tda">DOOM 黑暗时代</a></div>
+        <div class="footer-col"><h4>免责声明</h4><p style="font-size:0.8rem;color:#5a5a7a;">本站内容由AI自动整理，仅供参考。</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 GameGuide - 全自动游戏攻略站 | Powered by AI 🤖</p></div>
     </div>
   </footer>
 
