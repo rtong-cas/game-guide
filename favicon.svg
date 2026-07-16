@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c5cfc"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <!-- 圆形背景 -->
+  <circle cx="50" cy="50" r="48" fill="url(#g)" opacity="0.15"/>
+  <circle cx="50" cy="50" r="48" fill="none" stroke="url(#g)" stroke-width="2"/>
+  <!-- 游戏手柄图标 -->
+  <g transform="translate(50, 50)" fill="url(#g)">
+    <!-- 手柄主体 -->
+    <rect x="-22" y="-10" width="44" height="20" rx="6" ry="6"/>
+    <!-- 左侧握把 -->
+    <rect x="-22" y="-2" width="8" height="16" rx="3" ry="3" transform="rotate(-15, -18, 6)"/>
+    <!-- 右侧握把 -->
+    <rect x="14" y="-2" width="8" height="16" rx="3" ry="3" transform="rotate(15, 18, 6)"/>
+    <!-- 方向键 -->
+    <circle cx="-10" cy="0" r="2.5" fill="#0f0f1a"/>
+    <!-- ABXY 按钮 -->
+    <circle cx="8" cy="-4" r="2" fill="#0f0f1a"/>
+    <circle cx="14" cy="-1" r="2" fill="#0f0f1a"/>
+    <circle cx="8" cy="4" r="2" fill="#0f0f1a"/>
+    <!-- 摇杆 -->
+    <circle cx="-8" cy="-5" r="3.5" fill="none" stroke="#0f0f1a" stroke-width="1.5"/>
+    <circle cx="12" cy="5" r="3.5" fill="none" stroke="#0f0f1a" stroke-width="1.5"/>
+  </g>
+</svg>

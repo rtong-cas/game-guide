@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <linearGradient id="gr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c5cfc"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="200" fill="#0f0f1a" rx="20"/>
+  <!-- 手柄图标（大） -->
+  <g transform="translate(70, 100)">
+    <circle cx="0" cy="0" r="45" fill="url(#gr)" opacity="0.12"/>
+    <circle cx="0" cy="0" r="45" fill="none" stroke="url(#gr)" stroke-width="2.5"/>
+    <g fill="url(#gr)">
+      <rect x="-24" y="-12" width="48" height="24" rx="7" ry="7"/>
+      <rect x="-24" y="-4" width="9" height="18" rx="3" ry="3" transform="rotate(-15, -19.5, 7)"/>
+      <rect x="15" y="-4" width="9" height="18" rx="3" ry="3" transform="rotate(15, 19.5, 7)"/>
+      <circle cx="-11" cy="0" r="3" fill="#0f0f1a"/>
+      <circle cx="9" cy="-5" r="2.5" fill="#0f0f1a"/>
+      <circle cx="16" cy="-2" r="2.5" fill="#0f0f1a"/>
+      <circle cx="9" cy="5" r="2.5" fill="#0f0f1a"/>
+      <circle cx="-9" cy="-6" r="4" fill="none" stroke="#0f0f1a" stroke-width="2"/>
+      <circle cx="13" cy="6" r="4" fill="none" stroke="#0f0f1a" stroke-width="2"/>
+    </g>
+  </g>
+  <!-- 标题文字 -->
+  <text x="140" y="92" font-family="'Segoe UI', -apple-system, sans-serif" font-size="52" font-weight="800" fill="url(#gr)">GameGuide</text>
+  <text x="140" y="132" font-family="'Segoe UI', -apple-system, sans-serif" font-size="18" fill="#7a7a9a" font-weight="400">全自动游戏攻略站 · AI整理 仅供参考</text>
+  <!-- 装饰线条 -->
+  <line x1="140" y1="150" x2="340" y2="150" stroke="#2a2a4a" stroke-width="1"/>
+  <!-- 小标签 -->
+  <rect x="140" y="160" width="80" height="24" rx="12" fill="#7c5cfc20"/>
+  <text x="180" y="176" font-family="'Segoe UI', -apple-system, sans-serif" font-size="12" fill="#7c5cfc" text-anchor="middle">🔥 持续更新</text>
+</svg>
