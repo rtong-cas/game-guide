@@ -1,4 +1,4 @@
-// ===== GameGuide 主逻辑 =====
+// ===== 攻略喵 主逻辑 =====
 
 const GUIDE_ICONS = {
   '主线攻略': '🗺️', '隐藏要素': '🔍', '配装攻略': '⚔️', '进阶技巧': '💡',
@@ -212,7 +212,7 @@ function renderGames() {
     games = games.filter(g => g.guides.some(guide => guide.type === typeFilter));
   }
 
-  document.title = search ? `搜索"${search}" - GameGuide` : (typeFilter ? `${typeFilter} - GameGuide` : '游戏库 - GameGuide');
+  document.title = search ? `搜索"${search}" - 攻略喵` : (typeFilter ? `${typeFilter} - 攻略喵` : '游戏库 - 攻略喵');
   const titleEl = document.querySelector('.page-header h1');
   if (titleEl) {
     titleEl.textContent = search ? `🔍 搜索 "${search}"` : typeFilter ? `📂 ${typeFilter}` : '🎮 全部游戏';

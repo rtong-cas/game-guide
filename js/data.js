@@ -1,4 +1,4 @@
-// ===== GameGuide 完整数据 =====
+// ===== 攻略喵 完整数据 =====
 const siteData = {
   banners: [
     { title: "黑神话：悟空 完整攻略", desc: "从入门到全成就，最全面的西游冒险指南", link: "game.html?id=wukong", bg: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg" },
